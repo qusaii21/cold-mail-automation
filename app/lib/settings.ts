@@ -63,7 +63,7 @@ Phone: {phone}
 Email: {email}
 LinkedIn: {linkedin}
 GitHub: {github}`,
-  accessCode: "",
+  accessCode: "mail-sender-code",
 };
 
 const STORAGE_KEY = "job-email-mailer:settings";
