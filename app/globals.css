@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+body {
+  background-color: #1b2430;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.035) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+/* Subtle deckle-edge effect on the paper card */
+.deckle {
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.4),
+    0 30px 60px -20px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(176, 141, 87, 0.25);
+}
+
+.field-underline {
+  border-bottom: 1.5px solid rgba(27, 36, 48, 0.18);
+  transition: border-color 150ms ease;
+}
+.field-underline:focus-within {
+  border-color: #b08d57;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
