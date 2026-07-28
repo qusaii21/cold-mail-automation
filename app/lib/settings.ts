@@ -19,8 +19,6 @@ export const DEFAULT_SETTINGS: Settings = {
   accessCode: "mail-sender-code",
   bodyTemplate: `Hi,
 
-I hope you're doing well.
-
 I'm reaching out regarding the **{job_role}** position and would like to share my profile.
 
 I'm a **B.Tech graduate in Artificial Intelligence & Data Science from VIT Pune (2026)** with experience building **AI applications**, **automation systems**, and **production software**.

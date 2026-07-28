@@ -67,7 +67,7 @@ export async function POST(req: NextRequest) {
     }
 
     // --- Attachment: use a one-off resume sent in the request if provided,
-    // otherwise fall back to the resume bundled in /public/resume.pdf.
+    // otherwise fall back to the resume bundled in /public/Qusai_Shergardwala.pdf.
     // The uploaded resume is never written to disk -- it only exists in
     // memory for the duration of this request.
     const attachments: {
@@ -82,7 +82,7 @@ export async function POST(req: NextRequest) {
         ? resumeBase64.split(",")[1]
         : resumeBase64;
       attachments.push({
-        filename: resumeFilename || "resume.pdf",
+        filename: resumeFilename || "Qusai_Shergardwala.pdf",
         content: Buffer.from(base64Data, "base64"),
         contentType: "application/pdf",
       });
@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
       const resumePath = path.join(process.cwd(), "public", "Qusai_Shergardwala.pdf");
       if (fs.existsSync(resumePath)) {
         attachments.push({
-          filename: "resume.pdf",
+          filename: "Qusai_Shergardwala.pdf",
           content: fs.readFileSync(resumePath),
           contentType: "application/pdf",
         });

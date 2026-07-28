@@ -11,12 +11,12 @@ Gmail account, with your resume attached automatically.
 | Tkinter GUI | Next.js page |
 | `keyring` (OS keychain) for the App Password | Gmail credentials live in **Vercel environment variables**, never touch the browser |
 | `config.json` on local disk | Templates & contact info saved in **browser localStorage** (per-browser, edited from Settings) |
-| Resume picked via file browser | Resume is **bundled at `public/resume.pdf`** — replace the file and redeploy to update it |
+| Resume picked via file browser | Resume is **bundled at `public/Qusai_Shergardwala.pdf`** — replace the file and redeploy to update it |
 | Single user on one machine | Anyone with the URL can open the page, so an **access code** gates the send button |
 
 ## 1. Add your resume
 
-Replace `public/resume.pdf` with your actual resume (same filename), then
+Replace `public/Qusai_Shergardwala.pdf` with your actual resume (same filename), then
 redeploy. There's a placeholder PDF in there now as a reminder.
 
 ## 2. Get a Gmail App Password
