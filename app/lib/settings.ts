@@ -15,7 +15,7 @@ export const DEFAULT_SETTINGS: Settings = {
   email: "qusher9953@gmail.com",
   linkedin: "https://linkedin.com/in/qusai-shergardwala-8a6404259",
   github: "https://github.com/qusaii21",
-  subjectTemplate: "{job_role} Application | {name}",
+  subjectTemplate: "Application for {job_role} - {name}",
   accessCode: "mail-sender-code",
   bodyTemplate: `Hi,
 
