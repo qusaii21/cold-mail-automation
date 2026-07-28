@@ -51,11 +51,40 @@ Email: {email}`,
 
 const STORAGE_KEY = "job-email-mailer:settings";
 
+// Bump this whenever DEFAULT_SETTINGS (name/phone/links/template) changes.
+// Without this, anyone who already has settings saved in their browser
+// would keep loading their old cached copy forever -- code changes to the
+// defaults would silently never reach them, which is exactly what caused
+// blank Phone/Email/LinkedIn/GitHub fields and an out-of-date body
+// template even after the template in this file was fixed.
+const SETTINGS_VERSION = 2;
+const VERSION_KEY = "job-email-mailer:settings-version";
+
 export function loadSettings(): Settings {
   if (typeof window === "undefined") return DEFAULT_SETTINGS;
   try {
+    const storedVersion = Number(window.localStorage.getItem(VERSION_KEY) || "0");
     const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return DEFAULT_SETTINGS;
+
+    if (!raw || storedVersion < SETTINGS_VERSION) {
+      // Stale or missing: start from fresh defaults, but keep the access
+      // code if one was already set, since that's a real secret the user
+      // configured to match Vercel and shouldn't get wiped by a template
+      // update.
+      let accessCode = DEFAULT_SETTINGS.accessCode;
+      if (raw) {
+        try {
+          const old = JSON.parse(raw);
+          if (old.accessCode) accessCode = old.accessCode;
+        } catch {
+          // ignore unparsable old data
+        }
+      }
+      const fresh = { ...DEFAULT_SETTINGS, accessCode };
+      saveSettings(fresh);
+      return fresh;
+    }
+
     return { ...DEFAULT_SETTINGS, ...JSON.parse(raw) };
   } catch {
     return DEFAULT_SETTINGS;
@@ -65,6 +94,13 @@ export function loadSettings(): Settings {
 export function saveSettings(settings: Settings) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+  window.localStorage.setItem(VERSION_KEY, String(SETTINGS_VERSION));
+}
+
+export function resetSettingsToDefaults(): Settings {
+  const fresh = { ...DEFAULT_SETTINGS };
+  saveSettings(fresh);
+  return fresh;
 }
 
 const PLACEHOLDER_KEYS = [
