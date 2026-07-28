@@ -15,55 +15,38 @@ export const DEFAULT_SETTINGS: Settings = {
   email: "qusher9953@gmail.com",
   linkedin: "https://linkedin.com/in/qusai-shergardwala-8a6404259",
   github: "https://github.com/qusaii21",
-  subjectTemplate: "Application for {job_role} - {name}",
+  subjectTemplate: "{job_role} Application | {name}",
+  accessCode: "mail-sender-code",
   bodyTemplate: `Hi,
 
-I recently came across the opening for the {job_role} position and wanted to share my profile for your consideration.
+I hope you're doing well.
 
-Name: {name}
-Education: B.Tech in Artificial Intelligence & Data Science, VIT Pune (2026)
+I'm reaching out regarding the **{job_role}** position and would like to share my profile.
 
-Experience:
-• Software Engineer Intern, Rapid7 – Built LLM pipelines, Apache Airflow automation, and QA workflows.
-• Junior Software Developer, DesignerNest – Developed 25+ production web applications using React, Next.js, and Firebase.
+I'm a **B.Tech graduate in Artificial Intelligence & Data Science from VIT Pune (2026)** with experience building **AI applications**, **automation systems**, and **production software**.
 
-Skills:
-Python, Java, SQL, LangChain, CrewAI, RAG, AI Agents, Apache Airflow, React, Next.js, Flutter, Flask, Firebase, Supabase, MongoDB, MySQL, Git, Docker, CI/CD, REST APIs
+**Experience**
+• **Software Engineer Intern, Rapid7** – Built **LLM pipelines**, **Apache Airflow automation**, and **QA workflows** for production security systems.
+• **Junior Software Developer, DesignerNest** – Developed and deployed **25+ production web applications** using **React, Next.js, and Firebase**.
 
-Projects:
+**Technical Skills**
+Python • Java • SQL • LangChain • CrewAI • AI Agents • RAG • Apache Airflow • React • Next.js • Flutter • Flask • Firebase • Supabase • MongoDB • MySQL • Git • Docker • CI/CD • REST APIs • FastAPI
 
-• AI Powered WhatsApp CRM
-AI-powered CRM with AI Agents, LangChain, Firebase, and WhatsApp Cloud API.
-GitHub: https://github.com/qusaii21/AI-WhatsApp-CRM
-
-• Multi Agent Vulnerability Scanner
-Autonomous multi-agent security system for vulnerability analysis and remediation.
-GitHub: https://github.com/qusaii21/multi-agent-vulnerability-scanner
-
-• AI Healthcare Platform (DevClash Winner)
-AI-powered platform for medical jargon clarification, prescription understanding, and health insights.
-GitHub: https://github.com/qusaii21/MediClear
-
-Professional Links:
+**Professional Links**
 Portfolio: https://qusai-shergardwala.vercel.app
 GitHub: {github}
 LinkedIn: {linkedin}
 Resume: https://drive.google.com/file/d/1pc0E0QbWKqBHFW3VoJ9gy9swc_pDo3ei/view
 
-I've built production software independently and am now looking for an opportunity to work alongside experienced engineers, contribute to impactful products, and continue growing while building scalable systems.
+I've attached my resume for your reference and would appreciate the opportunity to discuss how I can contribute to your team.
 
-I've attached my resume for your reference. I would appreciate your consideration and would be happy to discuss my experience further.
-
-Thank you for your time, and I look forward to hearing from you.
+Thank you for your time. I look forward to hearing from you.
 
 Best regards,
 
 {name}
 Phone: {phone}
-Email: {email}
-LinkedIn: {linkedin}
-GitHub: {github}`,
-  accessCode: "mail-sender-code",
+Email: {email}`,
 };
 
 const STORAGE_KEY = "job-email-mailer:settings";
